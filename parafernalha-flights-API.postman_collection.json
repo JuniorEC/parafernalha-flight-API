@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "daf5b47f-aeed-4233-a96a-8151fb117d92",
+		"name": "parafernalha-flights-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postagem de voo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"voo\": \"AAL - 203\",\n    \"companhia\": \"AMERICAN AIRLINES INC\",\n    \"partidaPrevista\": \"2016-01-15T23:05:00Z\",\n    \"partidaReal\": \"2016-01-15T23:55:00Z\",\n    \"chegadaPrevista\": \"2016-01-16T07:50:00Z\",\n    \"chegadaReal\": \"2016-01-16T08:28:00Z\",\n    \"situacao\": \"Realizado\",\n    \"justificativa\": \"ATRASOS NAO ESPECIFICOS - OUTROS\",\n    \"aeroportoOrigem\": \"Miami\",\n    \"cidadeOrigem\": \"Miami\",\n    \"estadoOrigem\": \"N/I\",\n    \"paisOrigem\": \"Estados Unidos\",\n    \"aeroportoDestino\": \"Afonso Pena\",\n    \"cidadeDestino\": \"Sao Jose Dos Pinhais\",\n    \"estadoDestino\": \"PR\",\n    \"paisDestino\": \"Brasil\",\n    \"longDest\": -49.1724811,\n    \"latDest\": -25.5327132,\n    \"longOrig\": -80.2870457,\n    \"latOrig\": 25.795865\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/flights/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"flights",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pesquisar voo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/flights/?departure=2016-01-30&from=Sao Jose Dos Pinhais&to=Porto Alegre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"flights",
+						""
+					],
+					"query": [
+						{
+							"key": "departure",
+							"value": "2016-01-30"
+						},
+						{
+							"key": "from",
+							"value": "Sao Jose Dos Pinhais"
+						},
+						{
+							"key": "to",
+							"value": "Porto Alegre"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
